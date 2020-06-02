@@ -1,0 +1,11 @@
+.bg-pink {
+  background-color: #4ae54a;
+  filter: grayscale(30%);
+}
+.nav-bold {
+  font-weight: bold;
+}
+
+body {
+  background-color: #303030;
+}
