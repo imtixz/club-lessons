@@ -1,11 +1,39 @@
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Ubuntu"), url(http://example.com/fonts/ubuntu.woff) format("woff");
+}
+
 .bg-pink {
   background-color: #4ae54a;
   filter: grayscale(30%);
 }
 .nav-bold {
   font-weight: bold;
+  font-family: Ubuntu, "times new roman", times, roman, serif;
 }
 
 body {
   background-color: #303030;
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+}
+
+.text-color {
+  color: white;
+}
+
+.custom-btn-outline {
+  color: #4ae54a;
+  border-color: #4ae54a;
+}
+
+.custom-btn-outline:hover {
+  color: #fff;
+  background-color: #4ae54a;
+  border-color: #4ae54a;
+}
+
+.border-green {
+  border: 1px solid #4ae54a !important;
 }
