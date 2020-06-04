@@ -37,3 +37,7 @@ body {
 .border-green {
   border: 1px solid #4ae54a !important;
 }
+
+.asteriskField {
+  display: none;
+}

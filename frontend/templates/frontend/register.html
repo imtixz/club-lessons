@@ -10,13 +10,15 @@
           <legend class="bottom mb-5">
             <strong>Create an Account</strong>
           </legend>
-          {{ form|crispy }}
+          {{ pform|crispy }} {{ uform|crispy }}
         </fieldset>
 
         <button class="btn btn-outline-info custom-btn-outline" type="submit">
           Submit
         </button>
-        <a href="#" class="btn btn-link">Already have an account?</a>
+        <a href="{% url 'login' %}" class="btn btn-link"
+          >Already have an account?</a
+        >
       </form>
     </div>
   </div>
