@@ -4,33 +4,29 @@ from django.contrib.auth.forms import UserCreationForm
 from backend.models import Profile
 
 
-class ProfileRegisterForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['fname', 'lname', 'number', 'gender',
-                  'address', 'ssc_year', 'medium', 'shift', 'section', 'code', 'form_teacher']
-        labels = {
-            'fname': 'First Name',
-            'lname': 'Last Name',
-            'number': 'Phone Number',
-            'address': 'Address',
-            'gender': 'Gender',
-            'ssc_year': 'SSC Year',
-            'section': 'Section',
-            'code': 'Code No.',
-            'medium': 'Medium',
-            'shift': 'Shift',
-            'form_teacher': 'Form Teacher'
+class ProfileRegisterForm(forms.Form):
+    fname = forms.CharField(max_length=255, label='First Name')
+    lname = forms.CharField(max_length=255, label="Last Name")
+    number = forms.CharField(max_length=32, label="Phone Number",
+                             help_text="Enter a phone number we can use to contact you")
+    GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), ('O', 'Others'))
+    gender = forms.ChoiceField(choices=GENDER_CHOICES)
 
-        }
-        help_texts = {
-            'number': 'Enter a phone number we can use to contact you',
-            'address': "Enter your address. If you don't want to give your full address for some reason, giving a general vicinity is also okay (e.g. sector 11, uttara)",
-            'ssc_year': "Enter the year you will give ssc or have given ssc. This will be used to dynamically determine which grade you're in right now.",
-            'section': "Enter which section you're in (in Rajuk)",
-            'code': "Enter your normal code number (from Rajuk)",
-            'form_teacher': "Enter the full name or abbreviation of your form teacher"
-        }
+    GRADE_CHOICES = (('6', 'Class 6'), ('7', 'Class 7'),
+                     ('8', 'Class 8'), ('9', 'Class 9'), ('10', 'Class 10'),
+                     ('SSC Candidate', 'SSC Candidate'), ('11', 'Class 11'),
+                     ('12', 'Class 12'), ('HSC Candidate', 'HSC Candidate'), ('Alumni', 'Alumni'))
+    grade = forms.ChoiceField(choices=GRADE_CHOICES)
+    MEDIUM_CHOICES = (('E', 'English'), ('B', 'Bangla'))
+    medium = forms.ChoiceField(choices=MEDIUM_CHOICES)
+    SHIFT_CHOICES = (('M', 'Morning'), ('D', 'Day'))
+    shift = forms.ChoiceField(choices=SHIFT_CHOICES)
+    section = forms.CharField(max_length=32)
+    code = forms.CharField(max_length=16)
+    form_teacher = forms.CharField(
+        max_length=32, help_text="Enter the full name or abbreviation of your form teacher")
+    address = forms.CharField(
+        max_length=1024, help_text="Enter your address. If you don't want to give your full address for some reason, giving a general vicinity is also okay (e.g. sector 11, uttara)")
 
 
 class UserRegisterForm(UserCreationForm):

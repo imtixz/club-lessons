@@ -1,0 +1,29 @@
+{% extends "frontend/layout.html" %} {% block title %}Beginner{%endblock title%}
+{%load crispy_forms_tags%} {% block content %}
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+      <article
+        class="media content-section"
+        style="margin: 20px; margin-top: 35px;"
+      >
+        <div class="media-body">
+          <p class="mr-2 text-color">Lesson 1:</p>
+          <h2 class="article-title text-color" href="#"">
+            Debate Formats
+          </h2>
+          <p class="article-content text-color">
+            There are different formats of debating. Knowing about these formats
+            is the first step you need to take to get involved in the debating
+            sphere.
+          </p>
+          <button type="button" class="btn align-self-end btn-success custom-btn">
+            Visit Lesson
+          </button>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "frontend/layout.html" %} {% block title %}Logout{% endblock title %}
+{% block nav %}{% endblock nav %} {%load crispy_forms_tags%} {% block content %}
+
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+      <center><h3 class="text-color">You have been logged out.</h3></center>
+      <center>
+        <a href="{% url 'login' %}" class="btn btn-link">Log in again.</a>
+      </center>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

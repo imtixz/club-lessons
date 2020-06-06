@@ -10,7 +10,7 @@ class Profile(models.Model):
     address = models.CharField(max_length=1024)
     GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), ('O', 'Others'))
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    ssc_year = models.IntegerField()
+    graduation_year = models.CharField(max_length=32)
     section = models.CharField(max_length=32)
     code = models.CharField(max_length=16)
     MEDIUM_CHOICES = (('E', 'English'), ('B', 'Bangla'))
